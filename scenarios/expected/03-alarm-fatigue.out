@@ -1,0 +1,11 @@
+0 RAISE alarm=1 v=1 bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=67625002019d7b6d
+1000 REPEAT alarm=1 v=1 bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0 state=ACTIVE tier=BEDSIDE_RN repeats=1 vhash=67625002019d7b6d
+2000 REPEAT alarm=1 v=1 bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0 state=ACTIVE tier=BEDSIDE_RN repeats=2 vhash=67625002019d7b6d
+2500 RAISE alarm=2 v=1 bed=7 device=pump-7a code=OCCLUSION prio=MEDIUM value=1 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=e067dbdddf172a03
+4000 REPEAT alarm=1 v=1 bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0 state=ACTIVE tier=BEDSIDE_RN repeats=3 vhash=67625002019d7b6d
+8000 RESOLVE alarm=1 v=2 bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0 state=RESOLVED tier=BEDSIDE_RN repeats=3 vhash=1df84d856e2466cb
+62500 ESCALATE alarm=2 v=2 bed=7 device=pump-7a code=OCCLUSION prio=MEDIUM value=1 state=ESCALATED tier=CHARGE_RN repeats=0 vhash=d63c344ad97e875d
+70000 UPGRADE alarm=2 v=3 bed=7 device=pump-7a code=OCCLUSION prio=HIGH value=2 state=ACTIVE tier=CHARGE_RN repeats=1 vhash=d7ff74fd68425737
+71000 ACK_REFUSED alarm=2 asked_v=2 current_v=3 who="R. Okafor (synthetic)" role=CHARGE_RN reason=ERR_STALE
+72000 ACK alarm=2 v=4 bed=7 device=pump-7a code=OCCLUSION prio=HIGH value=2 state=ACKED tier=CHARGE_RN repeats=1 vhash=f72da9de265ae6aa by="R. Okafor (synthetic)" role=CHARGE_RN seen_v=3 request=13 note="Line kinked under the patient's arm. Straightened, pump running."
+73000 RESOLVE alarm=2 v=5 bed=7 device=pump-7a code=OCCLUSION prio=HIGH value=2 state=RESOLVED tier=CHARGE_RN repeats=1 vhash=caa7a4fb193c0736

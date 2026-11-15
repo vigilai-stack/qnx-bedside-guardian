@@ -1,0 +1,15 @@
+# Bed 7. A chattering ECG lead plus an infusion occlusion that gets worse.
+# Synthetic. Shows: LOW alarms never escalate and fold repeats; a MEDIUM
+# alarm escalates once to the charge nurse and stops there; an upgrade from
+# MEDIUM to HIGH starts a new cycle and makes an older acknowledgement stale.
+0      RAISE bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0
+1000   RAISE bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0
+2000   RAISE bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0
+2500   RAISE bed=7 device=pump-7a code=OCCLUSION prio=MEDIUM value=1
+4000   RAISE bed=7 device=ecg-7 code=LEAD_OFF prio=LOW value=0
+8000   CLEAR bed=7 device=ecg-7 code=LEAD_OFF
+70000  RAISE bed=7 device=pump-7a code=OCCLUSION prio=HIGH value=2
+71000  ACK alarm=2 who="R. Okafor (synthetic)" role=CHARGE_RN seen=stale note="Looking at the pump."
+72000  ACK alarm=2 who="R. Okafor (synthetic)" role=CHARGE_RN note="Line kinked under the patient's arm. Straightened, pump running."
+73000  CLEAR bed=7 device=pump-7a code=OCCLUSION
+200000 END

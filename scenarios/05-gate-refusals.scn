@@ -1,0 +1,10 @@
+# Bed 2. Every way an acknowledgement can be refused.
+# Synthetic. No name; a hash that doesn't match what was shown; an
+# acknowledgement after the device already cleared.
+0     RAISE bed=2 device=pump-2 code=AIR_IN_LINE prio=HIGH value=1
+2000  ACK alarm=1 who="" role=BEDSIDE_RN note="no name given"
+3000  ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN hash=0000000000000000 note="wrong screen"
+4000  ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN note="Air cleared from the line, pump restarted."
+9000  CLEAR bed=2 device=pump-2 code=AIR_IN_LINE
+10000 ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN note="late press"
+12000 END

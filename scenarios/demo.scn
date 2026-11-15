@@ -1,0 +1,18 @@
+# Demo: two beds on a night shift. Synthetic.
+# Bed 12: low SpO2, folded repeats, escalates to the charge nurse, a stale
+# and an under-tier acknowledgement are refused, the charge nurse
+# acknowledges with her own words, the device clears.
+# Bed 4: ventilator disconnect nobody answers; it reaches rapid response,
+# an incident record is written, rapid response acknowledges.
+0     RAISE bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=86
+2000  RAISE bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0
+3000  RAISE bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=85
+6000  RAISE bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=84
+18000 ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN note="Coming."
+21000 ACK alarm=1 who="R. Okafor (synthetic)" role=CHARGE_RN seen=stale note="Saw it on the hall screen."
+23000 ACK alarm=1 who="R. Okafor (synthetic)" role=CHARGE_RN request=7001 note="At bedside. Probe had slipped off a cold finger, moved it to the earlobe, reading 95. Staying 10 min."
+24000 ACK alarm=1 who="R. Okafor (synthetic)" role=CHARGE_RN request=7001 note="At bedside. Probe had slipped off a cold finger, moved it to the earlobe, reading 95. Staying 10 min."
+30000 CLEAR bed=12 device=pulse-ox-12 code=SPO2_LOW
+40000 ACK alarm=2 who="T. Hale (synthetic)" role=RAPID_RESPONSE note="Circuit reconnected at the Y-piece. Patient was on bag. Bedside nurse was in bed 6 with a fall."
+44000 CLEAR bed=4 device=vent-4 code=VENT_DISCONNECT
+46000 END

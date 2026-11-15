@@ -1,0 +1,7 @@
+0 RAISE alarm=1 v=1 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=17805530e0fc9c17
+15000 ESCALATE alarm=1 v=2 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=ESCALATED tier=CHARGE_RN repeats=0 vhash=58e0bec50d5c8079
+30000 ESCALATE alarm=1 v=3 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=ESCALATED tier=RAPID_RESPONSE repeats=0 vhash=6994d37691f35d26
+30000 INCIDENT alarm=1 v=3 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=ESCALATED tier=RAPID_RESPONSE repeats=0 vhash=6994d37691f35d26 reason=reached_rapid_response_unacknowledged
+60000 REPAGE alarm=1 v=3 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=ESCALATED tier=RAPID_RESPONSE repeats=0 vhash=6994d37691f35d26
+64000 ACK alarm=1 v=4 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=ACKED tier=RAPID_RESPONSE repeats=0 vhash=73e351125eab7787 by="T. Hale (synthetic)" role=RAPID_RESPONSE seen_v=3 request=6 note="Circuit reconnected at the Y-piece. Patient was on bag. Bedside nurse was in bed 6 with a fall."
+70000 RESOLVE alarm=1 v=5 bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0 state=RESOLVED tier=RAPID_RESPONSE repeats=0 vhash=a8b086c087e9f7ce

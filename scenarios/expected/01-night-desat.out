@@ -1,0 +1,9 @@
+0 RAISE alarm=1 v=1 bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=86 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=eee0d39b6514bf95
+3000 REPEAT alarm=1 v=1 bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=85 state=ACTIVE tier=BEDSIDE_RN repeats=1 vhash=eee0d39b6514bf95
+6000 REPEAT alarm=1 v=1 bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=84 state=ACTIVE tier=BEDSIDE_RN repeats=2 vhash=eee0d39b6514bf95
+15000 ESCALATE alarm=1 v=2 bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=84 state=ESCALATED tier=CHARGE_RN repeats=2 vhash=0d91d0c6262ee166
+18000 ACK_REFUSED alarm=1 asked_v=2 current_v=2 who="J. Mendez (synthetic)" role=BEDSIDE_RN reason=ERR_ROLE
+21000 ACK_REFUSED alarm=1 asked_v=1 current_v=2 who="R. Okafor (synthetic)" role=CHARGE_RN reason=ERR_STALE
+23000 ACK alarm=1 v=3 bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=84 state=ACKED tier=CHARGE_RN repeats=2 vhash=bae7f54a56d010ff by="R. Okafor (synthetic)" role=CHARGE_RN seen_v=2 request=7001 note="At bedside. Probe had slipped off a cold finger, moved it to the earlobe, reading 95. Staying 10 min."
+24000 ACK_DUPLICATE alarm=1 request=7001 already_recorded_at_v=3
+30000 RESOLVE alarm=1 v=4 bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=84 state=RESOLVED tier=CHARGE_RN repeats=2 vhash=082079e4102325b2

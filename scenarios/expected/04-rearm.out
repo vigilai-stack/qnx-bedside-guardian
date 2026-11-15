@@ -1,0 +1,5 @@
+0 RAISE alarm=1 v=1 bed=9 device=ecg-9 code=HR_HIGH prio=HIGH value=152 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=0ffa4e42ce936a48
+5000 ACK alarm=1 v=2 bed=9 device=ecg-9 code=HR_HIGH prio=HIGH value=152 state=ACKED tier=BEDSIDE_RN repeats=0 vhash=9b24b3002cf95554 by="J. Mendez (synthetic)" role=BEDSIDE_RN seen_v=1 request=5 note="Aware. Patient anxious, giving ordered dose, will recheck."
+65000 REARM alarm=1 v=3 bed=9 device=ecg-9 code=HR_HIGH prio=HIGH value=152 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=ef0ed3f259cb609b
+70000 ACK alarm=1 v=4 bed=9 device=ecg-9 code=HR_HIGH prio=HIGH value=152 state=ACKED tier=BEDSIDE_RN repeats=0 vhash=a4a937da49d4303e by="J. Mendez (synthetic)" role=BEDSIDE_RN seen_v=3 request=6 note="Still 140s. Called the covering provider."
+80000 RESOLVE alarm=1 v=5 bed=9 device=ecg-9 code=HR_HIGH prio=HIGH value=152 state=RESOLVED tier=BEDSIDE_RN repeats=0 vhash=99cb42af68616471

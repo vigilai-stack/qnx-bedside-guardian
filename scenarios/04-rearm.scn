@@ -1,0 +1,8 @@
+# Bed 9. Acknowledged, but the condition never clears.
+# Synthetic. Shows: an acknowledged HIGH alarm comes back after the re-arm
+# window because the device still reports it, then a second acknowledgement.
+0     RAISE bed=9 device=ecg-9 code=HR_HIGH prio=HIGH value=152
+5000  ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN note="Aware. Patient anxious, giving ordered dose, will recheck."
+70000 ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN note="Still 140s. Called the covering provider."
+80000 CLEAR bed=9 device=ecg-9 code=HR_HIGH
+90000 END

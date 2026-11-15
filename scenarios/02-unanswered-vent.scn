@@ -1,0 +1,8 @@
+# Bed 4. A ventilator reports a circuit disconnect and nobody answers.
+# Synthetic. Shows: bedside -> charge -> rapid response, an incident record
+# when it reaches rapid response, a re-page, then rapid response
+# acknowledges and the device clears.
+0     RAISE bed=4 device=vent-4 code=VENT_DISCONNECT prio=HIGH value=0
+64000 ACK alarm=1 who="T. Hale (synthetic)" role=RAPID_RESPONSE note="Circuit reconnected at the Y-piece. Patient was on bag. Bedside nurse was in bed 6 with a fall."
+70000 CLEAR bed=4 device=vent-4 code=VENT_DISCONNECT
+75000 END

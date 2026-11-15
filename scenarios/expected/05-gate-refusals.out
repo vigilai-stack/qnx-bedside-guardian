@@ -1,0 +1,6 @@
+0 RAISE alarm=1 v=1 bed=2 device=pump-2 code=AIR_IN_LINE prio=HIGH value=1 state=ACTIVE tier=BEDSIDE_RN repeats=0 vhash=0794b1d864050673
+2000 ACK_REFUSED alarm=1 asked_v=1 current_v=1 who="" role=BEDSIDE_RN reason=ERR_NO_NAME
+3000 ACK_REFUSED alarm=1 asked_v=1 current_v=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN reason=ERR_STALE
+4000 ACK alarm=1 v=2 bed=2 device=pump-2 code=AIR_IN_LINE prio=HIGH value=1 state=ACKED tier=BEDSIDE_RN repeats=0 vhash=3132ab9e7c72ebd2 by="J. Mendez (synthetic)" role=BEDSIDE_RN seen_v=1 request=7 note="Air cleared from the line, pump restarted."
+9000 RESOLVE alarm=1 v=3 bed=2 device=pump-2 code=AIR_IN_LINE prio=HIGH value=1 state=RESOLVED tier=BEDSIDE_RN repeats=0 vhash=63b440ad70286e19
+10000 ACK_REFUSED alarm=1 asked_v=3 current_v=3 who="J. Mendez (synthetic)" role=BEDSIDE_RN reason=ERR_STATE

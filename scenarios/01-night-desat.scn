@@ -1,0 +1,14 @@
+# Bed 12, night shift. A pulse oximeter reports low oxygen saturation.
+# Synthetic. Shows: repeats folded, escalation to the charge nurse, a
+# bedside acknowledgement refused (tier too low), a stale acknowledgement
+# refused, the real acknowledgement with the nurse's own words, a double
+# press counted once, then the device clears.
+0     RAISE bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=86
+3000  RAISE bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=85
+6000  RAISE bed=12 device=pulse-ox-12 code=SPO2_LOW prio=HIGH value=84
+18000 ACK alarm=1 who="J. Mendez (synthetic)" role=BEDSIDE_RN note="Coming."
+21000 ACK alarm=1 who="R. Okafor (synthetic)" role=CHARGE_RN seen=stale note="Saw it on the hall screen."
+23000 ACK alarm=1 who="R. Okafor (synthetic)" role=CHARGE_RN request=7001 note="At bedside. Probe had slipped off a cold finger, moved it to the earlobe, reading 95. Staying 10 min."
+24000 ACK alarm=1 who="R. Okafor (synthetic)" role=CHARGE_RN request=7001 note="At bedside. Probe had slipped off a cold finger, moved it to the earlobe, reading 95. Staying 10 min."
+30000 CLEAR bed=12 device=pulse-ox-12 code=SPO2_LOW
+40000 END
